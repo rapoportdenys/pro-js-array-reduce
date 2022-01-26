@@ -1,4 +1,4 @@
-const array = [    1, 2,  3];
+const array = [         1, 2,  3];
 
 const mapResult = map(array, function (item, index, array) {
   return item * 4;

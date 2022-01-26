@@ -1,0 +1,22 @@
+{
+  "name": "pro-js-array-reduce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rammfall-edu/pro-js-array-reduce.git"
+  },
+  "author": "rammfall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rammfall-edu/pro-js-array-reduce/issues"
+  },
+  "homepage": "https://github.com/rammfall-edu/pro-js-array-reduce#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}

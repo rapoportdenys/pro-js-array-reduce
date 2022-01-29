@@ -6,8 +6,8 @@
 */
 function map(array, callback) {
   const result = [];
-  array.reduce (function (prev, curr){
-      prev.push(callback(curr));
+  array.reduce (function (prev, curr, index, array){
+      prev.push(callback(curr, index, array));
       return prev;
   }, result)
   return result;
@@ -21,8 +21,8 @@ function map(array, callback) {
 */
 function filter(array, callback) {
   const result = [];
-  array.reduce(function (prev, curr) {
-      if(callback(curr)){
+  array.reduce(function (prev, curr, index, array) {
+      if(callback(curr, index, array)){
           prev.push(curr);
       };
       return prev;
@@ -36,9 +36,9 @@ function filter(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function some(array, callback) {
-  return array.reduce(function (accumulator, current) {
+  return array.reduce(function (accumulator, current, index, array) {
       if (accumulator === true) return true
-      return callback(current)
+      return callback(current, index, array)
   }, false);
 }
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
@@ -48,9 +48,9 @@ function some(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function every(array, callback) {
-  return array.reduce(function (accumulator, current) {
+  return array.reduce(function (accumulator, current, index, array) {
       if (accumulator === false) return false
-      return callback(current)
+      return callback(current, index, array)
   }, true);
 }
 // Эту часть не удаляем, она важна для проверки результата
